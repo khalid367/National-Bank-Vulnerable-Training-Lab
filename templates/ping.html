@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Utility | Ping</title>
+    <style>
+        body {
+            background: #ecf0f1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2c3e50;
+            padding: 18px;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: 2px solid #2c3e50;
+            border-radius: 6px;
+        }
+        button {
+            background: #2c3e50;
+            color: white;
+            padding: 12px 25px;
+            font-size: 17px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #1a252f;
+        }
+        pre {
+            background: #1e272e;
+            color: #d2dae2;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            white-space: pre-wrap;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<header>📡 Network Diagnostic Tool</header>
+
+<div class="container">
+
+<form action="/ping" method="get">
+    <label>Enter Host to Ping:</label>
+    <input type="text" name="host" placeholder="example: google.com">
+    <button type="submit">Ping</button>
+</form>
+
+{% if output %}
+<h3>Ping Results:</h3>
+<pre>{{ output }}</pre>
+{% endif %}
+
+<a href="/dashboard">⬅ Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>National Bank – Cyber Challenge</title>
+
+<style>
+    body {
+        background: #eef2f7;
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        background: #0f2b4c;
+        color: white;
+        padding: 22px;
+        text-align: center;
+        font-size: 26px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 35px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 14px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        color: #0f2b4c;
+        margin-top: 35px;
+        margin-bottom: 10px;
+    }
+
+    .box {
+        background: #f5f7fc;
+        padding: 18px;
+        margin-top: 12px;
+        border-left: 5px solid #0f2b4c;
+        border-radius: 10px;
+        line-height: 1.6;
+    }
+
+    /* Submit Area */
+    .submit-section {
+        background: #1a1a1a;
+        color: #eee;
+        padding: 25px;
+        border-radius: 12px;
+        margin-top: 50px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    input {
+        width: 95%;
+        padding: 12px;
+        margin-top: 10px;
+        border-radius: 6px;
+        border: none;
+        font-size: 15px;
+    }
+
+    button {
+        padding: 12px 20px;
+        margin-top: 12px;
+        background: #0fbc8c;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0aa77c;
+    }
+
+    .success {
+        color: #55efc4;
+        margin-top: 12px;
+        font-weight: bold;
+    }
+
+    .error {
+        color: #ff7675;
+        margin-top: 12px;
+        font-weight: bold;
+    }
+
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    🏴‍☠️ National Bank — Cybersecurity Story & Challenges
+</div>
+
+<div class="container">
+
+    <h2>📘 Story</h2>
+    <div class="box">
+        The National Bank has secretly deployed an intentionally vulnerable internal platform.
+        Your mission is to investigate, exploit, and uncover four hidden security flags.
+        Each flag represents a real‑world vulnerability left behind by careless developers.
+    </div>
+
+    <h2>🧩 Challenge 1 — SQL Injection</h2>
+    <div class="box">
+        <b>Description:</b> The login page builds SQL queries directly from user input.<br><br>
+        <b>Hint:</b> Manipulate the logic so authentication always succeeds.<br>
+    </div>
+
+    <h2>🧩 Challenge 2 — Path Traversal</h2>
+    <div class="box">
+        <b>Description:</b> The file viewer allows loading any file on the system.<br><br>
+        <b>Hint:</b> Move up directories until you reach a hidden area.<br>
+    </div>
+
+    <h2>🧩 Challenge 3 — Command Injection</h2>
+    <div class="box">
+        <b>Description:</b> The server runs system commands using unsafe input.<br><br>
+        <b>Hint:</b> Try adding a second command after controlling the syntax.<br>
+    </div>
+
+    <h2>🧩 Challenge 4 — Hidden Backdoor</h2>
+    <div class="box">
+        <b>Description:</b> A forgotten debug parameter reveals confidential data.<br><br>
+        <b>Hint:</b> Explore unusual IDs or paths in the account system.<br>
+    </div>
+
+
+    <!-- Flag Submission -->
+    <div class="submit-section">
+        <h3>Submit Flag</h3>
+
+        <form method="POST">
+            <input type="text" name="flag" placeholder="Enter your flag..." required>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if result %}
+            <p class="{{ result_class }}">{{ result }}</p>
+        {% endif %}
+    </div>
+
+</div>
+
+</body>
+</html>
+
